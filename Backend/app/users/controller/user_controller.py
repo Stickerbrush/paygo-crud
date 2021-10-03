@@ -18,7 +18,7 @@ class UserController(object):
 
             for subemployee in subemployees:
                 if user.cargo != "Ejecutivo Comercial":
-                    sales_sum += subemployee.ventas
+                    sales_sum += int(subemployee.ventas)
                 serialized_subemployees.append(CustomUserSerializer(subemployee).data)
 
             return {

@@ -52,6 +52,9 @@ def create_users():
     df['Ventas 2019'] = df['Ventas 2019'].fillna(0)
     df['Ventas 2019'] = df['Ventas 2019'].astype(int)
 
+    df['Jefe'] = df['Jefe'].str.replace('nan', '0')
+    df['Jefe'] = df['Jefe'].apply(lambda x: int(float(x)))
+
     #Data Loading
     for i in range(len(df.index)):
 
