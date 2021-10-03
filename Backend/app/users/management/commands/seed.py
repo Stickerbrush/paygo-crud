@@ -33,10 +33,11 @@ def clear_data():
 
 def create_users():
     logging.info("Creating users")
-    print("LOLOL")
+    print("Creating users")
 
     df = pd.read_csv(os.path.normpath("users/management/seed_data/BDprueba.csv"))
 
+    #Data pre-processing
     df['Número de empleado'] = df['Número de empleado'].astype(str)
     df['Jefe'] = df['Jefe'].astype(str)
     df['Fecha de Nacimiento'] = df['Fecha de Nacimiento'].apply(lambda x:
@@ -45,9 +46,13 @@ def create_users():
     df['Fecha de Ingreso'] = df['Fecha de Ingreso'].apply(lambda x:
                                                           datetime.datetime.strptime(x, "%d/%m/%Y").
                                                           strftime("%Y-%m-%d"))
-    df['Ventas 2019'] = df['Ventas 2019'].fillna('$0')
 
+    df['Ventas 2019'] = df['Ventas 2019'].str.replace("$","", regex=False)\
+                                            .str.replace(".", "", regex=False)
+    df['Ventas 2019'] = df['Ventas 2019'].fillna(0)
+    df['Ventas 2019'] = df['Ventas 2019'].astype(int)
 
+    #Data Loading
     for i in range(len(df.index)):
 
         new_user = CustomUser.objects.create(
@@ -73,9 +78,7 @@ def create_users():
 
         new_user.username = df['Email'][i]
         new_user.save()
-        new_user = None
-
-
+        print("User: " + df['Email'][i] + " created succesfully!")
 
 def run_seed(self, mode):
     """ Seed database based on mode

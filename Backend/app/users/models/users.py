@@ -28,7 +28,7 @@ class CustomUser(AbstractUser):
     area_operacional = models.CharField(max_length=30, null=False)
     ciudad = models.CharField(max_length=30, null=False)
     departamento = models.CharField(max_length=30, null=False)
-    ventas = models.CharField(max_length=30, null=False)
+    ventas = models.IntegerField(null=False)
     email = models.EmailField(max_length=100, null=False, unique=True)
     foto_perfil = models.CharField(max_length=2000, null=True, blank=True)
     numero_celular = models.CharField(max_length=20)

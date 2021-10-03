@@ -22,14 +22,15 @@
     <list default="true" id="2592f143-fa72-434d-ab7e-2936adb415c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3-journal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/users/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/controller/user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/controller/user_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/management/commands/seed.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/commands/seed.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/models/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views/user_views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/serializers/user_serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/serializers/user_serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls/user_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls/user_urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views/user_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views/user_views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +110,7 @@
       <updated>1633274393393</updated>
       <workItem from="1633274443150" duration="219000" />
       <workItem from="1633274746912" duration="29000" />
-      <workItem from="1633274819205" duration="13866000" />
+      <workItem from="1633274819205" duration="17978000" />
     </task>
     <servers />
   </component>
@@ -132,42 +133,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="719" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633278414676" />
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1633288178358">
+    <state width="1877" height="362" key="GridCell.Tab.0.bottom" timestamp="1633294355599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633288178358" />
-    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1633288178358">
+    <state width="1877" height="362" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633294355599" />
+    <state width="1877" height="362" key="GridCell.Tab.0.center" timestamp="1633294355599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633288178358" />
-    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1633288178358">
+    <state width="1877" height="362" key="GridCell.Tab.0.center/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633294355599" />
+    <state width="1877" height="362" key="GridCell.Tab.0.left" timestamp="1633294355599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633288178358" />
-    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1633288178358">
+    <state width="1877" height="362" key="GridCell.Tab.0.left/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633294355599" />
+    <state width="1877" height="362" key="GridCell.Tab.0.right" timestamp="1633294355599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633288178358" />
-    <state width="1877" height="362" key="GridCell.Tab.1.bottom" timestamp="1633287945355">
+    <state width="1877" height="362" key="GridCell.Tab.0.right/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633294355599" />
+    <state width="1877" height="362" key="GridCell.Tab.1.bottom" timestamp="1633294355599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="362" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633287945355" />
-    <state width="1877" height="362" key="GridCell.Tab.1.center" timestamp="1633287945355">
+    <state width="1877" height="362" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633294355599" />
+    <state width="1877" height="362" key="GridCell.Tab.1.center" timestamp="1633294355599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="362" key="GridCell.Tab.1.center/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633287945355" />
-    <state width="1877" height="362" key="GridCell.Tab.1.left" timestamp="1633287945355">
+    <state width="1877" height="362" key="GridCell.Tab.1.center/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633294355599" />
+    <state width="1877" height="362" key="GridCell.Tab.1.left" timestamp="1633294355599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="362" key="GridCell.Tab.1.left/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633287945355" />
-    <state width="1877" height="362" key="GridCell.Tab.1.right" timestamp="1633287945355">
+    <state width="1877" height="362" key="GridCell.Tab.1.left/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633294355599" />
+    <state width="1877" height="362" key="GridCell.Tab.1.right" timestamp="1633294355599">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="362" key="GridCell.Tab.1.right/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633287945355" />
+    <state width="1877" height="362" key="GridCell.Tab.1.right/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633294355599" />
     <state x="688" y="182" width="784" height="651" key="dock-window-1" timestamp="1633287145653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="688" y="182" width="784" height="651" key="dock-window-1/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633287145653" />
+    <state x="2032" y="217" width="1411" height="813" key="dock-window-2" timestamp="1633293483853">
+      <screen x="1920" y="177" width="1600" height="860" />
+    </state>
+    <state x="2032" y="217" width="1411" height="813" key="dock-window-2/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633293483853" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1633276105502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -177,14 +182,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/users/controller/user_controller.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/users/apps.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/users/apps.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/users/management/commands/seed.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/users/views/user_views.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

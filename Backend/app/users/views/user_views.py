@@ -6,44 +6,20 @@ from rest_framework.generics import (
     RetrieveUpdateAPIView,  # update one
     DestroyAPIView,  # delete one
 )
-from users.controller.user_controller import (
-    CustomUser, CustomUserSerializer, UserController)
-class UserCreate(CreateAPIView):
-    """View to Create Users"""
-    queryset = CustomUser.objects.all()
-    serializer_class = CustomUserSerializer
 
-
-
-class UserLoadJsonUserBulk(CreateAPIView):
-    """View to create bulk users"""
-    user_controller = UserController()
-    #user_controller.load_seed_users()
+from users.controller.user_controller import UserController
+from users.models.users import CustomUser
+from users.serializers.user_serializer import CustomUserSerializer
 
 
 
 
-class UserDetail(RetrieveAPIView):
-    """View to Retrive a Users and acumulated sells by employes"""
-    queryset = CustomUser.objects.all()
-    serializer_class = CustomUserSerializer
+class UserDetailByEmployeeId(RetrieveAPIView):
+    """View to Retrive a Users"""
+    lookup_field = "numero_empleado"
 
+    def get(self, request, *args, **kwargs):
 
-
-
-class UserList(ListAPIView):
-    """View to List a Users"""
-    queryset = CustomUser.objects.all()
-    serializer_class = CustomUserSerializer
-
-
-class UserUpdate(RetrieveUpdateAPIView):
-    """View to Update a Users"""
-    queryset = CustomUser.objects.all()
-    serializer_class = CustomUserSerializer
-
-
-class UserDelete(DestroyAPIView):
-    """View to Delete a Users"""
-    queryset = CustomUser.objects.all()
-    serializer_class = CustomUserSerializer
+        employed_number: int = kwargs['numero_empleado']
+        controller = UserController()
+        data = controller.get_employee_data(employed_number)

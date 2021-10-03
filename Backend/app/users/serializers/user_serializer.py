@@ -7,23 +7,23 @@ class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
         fields = [
-            'nombre' 
-            'primer_apellido'
-            'segundo_apellido' 
-            'cedula' 
-            'fecha_de_nacimiento'
-            'sexo' 
-            'fecha_ingreso' 
-            'numero_de_empleado' 
-            'cargo'
-            'jefe'
-            'area_operacional' 
-            'ciudad' 
-            'departamento'
-            'ventas'
-            'email' 
-            'foto_perfil' 
-            'numero_celular'
+            'nombre',
+            'primer_apellido',
+            'segundo_apellido',
+            'cedula',
+            'fecha_de_nacimiento',
+            'sexo',
+            'fecha_ingreso',
+            'numero_de_empleado',
+            'cargo',
+            'jefe',
+            'area_operacional',
+            'ciudad',
+            'departamento',
+            'ventas',
+            'email',
+            'foto_perfil',
+            'numero_celular',
         ]
 
     #CRUD Interface:
