@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     ####THIRD PARTY APPS
     'rest_framework',
     'drf_yasg',
+    'rest_framework.authtoken',
 
     ####LOCAL APPS
     'users'

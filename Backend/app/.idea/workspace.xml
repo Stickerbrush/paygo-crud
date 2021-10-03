@@ -21,9 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2592f143-fa72-434d-ab7e-2936adb415c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/oauth/views/login_view.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views/user_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views/user_views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +65,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Workspace\Angular\paygo-crud\Backend\app\oauth\views" />
       <recent name="D:\Workspace\Angular\paygo-crud\Backend\app\users\admin" />
       <recent name="D:\Workspace\Angular\paygo-crud\Backend\app\users" />
       <recent name="D:\Workspace\Angular\paygo-crud\Backend\app\users\management\seed_data" />
       <recent name="D:\Workspace\Angular\paygo-crud\Backend\app\users\management\commands" />
-      <recent name="D:\Workspace\Angular\paygo-crud\Backend\app\users\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -103,7 +108,7 @@
       <updated>1633274393393</updated>
       <workItem from="1633274443150" duration="219000" />
       <workItem from="1633274746912" duration="29000" />
-      <workItem from="1633274819205" duration="20146000" />
+      <workItem from="1633274819205" duration="22989000" />
     </task>
     <servers />
   </component>
@@ -126,22 +131,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="719" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633278414676" />
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1633296736923">
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1633299594473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633296736923" />
-    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1633296736923">
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633299594473" />
+    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1633299594473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633296736923" />
-    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1633296736923">
+    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633299594473" />
+    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1633299594473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633296736923" />
-    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1633296736923">
+    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633299594473" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1633299594473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633296736923" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633299594473" />
     <state width="1877" height="362" key="GridCell.Tab.1.bottom" timestamp="1633295664837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -192,6 +197,10 @@
           <url>file://$PROJECT_DIR$/users/controller/user_controller.py</url>
           <line>12</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/users/views/user_views.py</url>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

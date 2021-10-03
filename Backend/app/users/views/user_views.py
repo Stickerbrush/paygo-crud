@@ -1,15 +1,13 @@
 from users.controller.user_controller import UserController
 from utils.server.rest_utils import ApiRestUtilities
 from rest_framework.generics import (
-    CreateAPIView,  # create one
-    RetrieveAPIView,  # get one (filter)
-    ListAPIView,  # get all (filter)
-    RetrieveUpdateAPIView,  # update one
-    DestroyAPIView,  # delete one
+    RetrieveAPIView
 )
+from  users.serializers.user_serializer import CustomUserSerializer
 
 #View to retrieve the user data, with its subemployees (if any)
 class UserDetailByEmployeeId(RetrieveAPIView):
+    serializer_class = CustomUserSerializer
     lookup_field = "numero_empleado"
 
     def get(self, request, *args, **kwargs):
