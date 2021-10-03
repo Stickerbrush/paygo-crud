@@ -20,15 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2592f143-fa72-434d-ab7e-2936adb415c0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7addf77-b896-4784-a5dd-958f4f522093.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7addf77-b896-4784-a5dd-958f4f522093.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/oauth/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/oauth/views/login_view.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views/user_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views/user_views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +101,7 @@
       <updated>1633274393393</updated>
       <workItem from="1633274443150" duration="219000" />
       <workItem from="1633274746912" duration="29000" />
-      <workItem from="1633274819205" duration="22989000" />
+      <workItem from="1633274819205" duration="24335000" />
     </task>
     <servers />
   </component>
