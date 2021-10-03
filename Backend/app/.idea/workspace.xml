@@ -20,12 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2592f143-fa72-434d-ab7e-2936adb415c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/users/models/users.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/tests/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +96,7 @@
       <updated>1633274393393</updated>
       <workItem from="1633274443150" duration="219000" />
       <workItem from="1633274746912" duration="29000" />
-      <workItem from="1633274819205" duration="2592000" />
+      <workItem from="1633274819205" duration="3184000" />
     </task>
     <servers />
   </component>
