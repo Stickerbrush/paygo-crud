@@ -2,6 +2,7 @@ from django.db import models
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from utils.oauth.oauth_manager import UserManager
+from django.utils import timezone
 import datetime
 
 #Custom user model to fit all the extra data described in the csv file
@@ -21,13 +22,13 @@ class CustomUser(AbstractUser):
     fecha_de_nacimiento = models.DateField(default=datetime.date.today, null=True, blank=True)
     sexo = models.CharField(max_length=1, default="M")
     fecha_ingreso = models.DateField(default=datetime.date.today)
-    numero_de_empleado = models.CharField(default=30, null=False)
-    cargo = models.CharField(default=50)
-    jefe = models.CharField(default=30, null=False)
-    area_operacional = models.CharField(default=30, null=False)
-    ciudad = models.CharField(default=30, null=False)
-    departamento = models.CharField(default=30, null=False)
-    ventas = models.IntegerField()
+    numero_de_empleado = models.CharField(max_length=30, null=False)
+    cargo = models.CharField(max_length=50)
+    jefe = models.CharField(max_length=30, null=False)
+    area_operacional = models.CharField(max_length=30, null=False)
+    ciudad = models.CharField(max_length=30, null=False)
+    departamento = models.CharField(max_length=30, null=False)
+    ventas = models.CharField(max_length=30, null=False)
     email = models.EmailField(max_length=100, null=False, unique=True)
     foto_perfil = models.CharField(max_length=2000, null=True, blank=True)
     numero_celular = models.CharField(max_length=20)
@@ -36,7 +37,7 @@ class CustomUser(AbstractUser):
     is_active =  models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-    created_at = models.DateTimeField(default=datetime.datetime.now)
+    created_at = models.DateTimeField(default=timezone.now)
 
 
 

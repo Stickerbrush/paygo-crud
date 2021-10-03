@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -45,8 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    ####THIRD PARTY APPS
     'rest_framework',
-    'drf_yasg'
+    'drf_yasg',
+
+    ####LOCAL APPS
+    'users'
 ]
 
 
@@ -92,6 +97,8 @@ DATABASES = {
     }
 }
 
+'''Auth configuration'''
+AUTH_USER_MODEL = 'users.CustomUser'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

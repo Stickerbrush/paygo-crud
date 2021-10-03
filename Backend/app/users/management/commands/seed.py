@@ -1,7 +1,9 @@
 import pandas as pd
 from django.db import connection
 from django.core.management.base import BaseCommand
-import logging, os, random
+import logging, os, datetime
+from users.models import CustomUser
+from users.serializers.user_serializer import make_password
 
 # python manage.py seed --mode=refresh
 
@@ -26,89 +28,55 @@ class Command(BaseCommand):
 def clear_data():
     """Deletes all the table data"""
     logging.info("Delete Address instances")
-    #Trabajador.objects.all().delete()
+    CustomUser.objects.all().delete()
 
 
 def create_users():
-    print("test")
-''' 
-def create_trabajadores():
-    """Creates an address object combining different elements from the list"""
-    logging.info("Creating address")
-    df = pd.read_excel(os.path.normpath("cpmAPI/management/seed_data/trabajadores.xlsx"))
-    df['numero_cedula'] = df['numero_cedula'].astype(str)
-    df['contrasena'] = df['contrasena'].astype(str)
-    cargos = ["OBRERO", "ADMINISTRADOR", "JEFE_ALMACEN"]
-    query = """INSERT INTO Trabajadores (numero_cedula, 
-                                         nombre,
-                                         apellido,
-                                         direccion,
-                                         numero_celular,
-                                         contrasena,
-                                         cargo,
-                                         is_active) VALUES (%s, %s, %s, %s, %s, %s, %s, True)"""
+    logging.info("Creating users")
+    print("LOLOL")
 
-    #df.to_sql("Trabajadores", con=sql.connect("db.sqlite3"))
-    with connection.cursor() as cursor:
-        for i in range(len(df.index)):
-            print([df.numero_cedula[i],
-                                df.nombre[i],
-                                df.apellido[i],
-                                df.direccion[i],
-                                df.numero_celular[i],
-                                df.contrasena[i],
-                                random.choice(cargos)])
+    df = pd.read_csv(os.path.normpath("users/management/seed_data/BDprueba.csv"))
 
-            cursor.execute(query, (df.numero_cedula[i],
-                                   df.nombre[i],
-                                   df.apellido[i],
-                                   df.direccion[i],
-                                   str(df.numero_celular[i]),
-                                   df.contrasena[i],
-                                   random.choice(cargos)))
+    df['Número de empleado'] = df['Número de empleado'].astype(str)
+    df['Jefe'] = df['Jefe'].astype(str)
+    df['Fecha de Nacimiento'] = df['Fecha de Nacimiento'].apply(lambda x:
+                                                                datetime.datetime.strptime(x, "%d/%m/%Y").
+                                                                strftime("%Y-%m-%d"))
+    df['Fecha de Ingreso'] = df['Fecha de Ingreso'].apply(lambda x:
+                                                          datetime.datetime.strptime(x, "%d/%m/%Y").
+                                                          strftime("%Y-%m-%d"))
+    df['Ventas 2019'] = df['Ventas 2019'].fillna('$0')
 
-        cursor.close()
-    #logging.info("{} address created.".format(address))
-    #return address
 
-def create_clientes():
-    """Creates an address object combining different elements from the list"""
-    logging.info("Creating address")
-    df = pd.read_excel(os.path.normpath("cpmAPI/management/seed_data/clientes.xlsx"))
-    df['numero_nit'] = df['numero_nit'].astype(str)
+    for i in range(len(df.index)):
 
-    print(df.info())
-    cargos = ["SUPERVISOR"]
-    query = """INSERT INTO Clientes (numero_nit, 
-                                         nombre,
-                                         apellido,
-                                         correo,
-                                         direccion,
-                                         contrasena,
-                                         cargo,
-                                         is_active) VALUES (%s, %s, %s, %s, %s, %s, %s, True)"""
+        new_user = CustomUser.objects.create(
+            nombre=df['Nombres'][i],
+            primer_apellido=df['Apellido 1'][i],
+            segundo_apellido=df['Apellido 2'][i],
+            cedula=df['Cédula'][i],
+            fecha_de_nacimiento=df['Fecha de Nacimiento'][i],
+            sexo=df['Género'][i],
+            fecha_ingreso=df['Fecha de Ingreso'][i],
+            numero_de_empleado=df['Número de empleado'][i],
+            cargo=df['Cargo'][i],
+            jefe=df['Jefe'][i],
+            area_operacional=df['Zona'][i],
+            ciudad=df['Municipio'][i],
+            departamento=df['Departamento'][i],
+            ventas=df['Ventas 2019'][i],
+            email=df['Email'][i],
+            foto_perfil=df['Imágen'][i],
+            numero_celular=df['Celular'][i],
+            password=make_password(df['Contraseña'][i])
+        )
 
-    #df.to_sql("Trabajadores", con=sql.connect("db.sqlite3"))
-    with connection.cursor() as cursor:
-        for i in range(len(df.index)):
-            print([df.numero_nit[i],
-                                df.nombre[i],
-                                df.apellido[i],
-                                df.correo[i],
-                                df.direccion[i],
-                                df.contrasena[i],
-                                random.choice(cargos)])
+        new_user.username = df['Email'][i]
+        new_user.save()
+        new_user = None
 
-            cursor.execute(query, (df.numero_nit[i],
-                                   df.nombre[i],
-                                   df.apellido[i],
-                                   df.correo[i],
-                                   df.direccion[i],
-                                   df.contrasena[i],
-                                   random.choice(cargos)))
 
-        cursor.close()
-'''
+
 def run_seed(self, mode):
     """ Seed database based on mode
 
