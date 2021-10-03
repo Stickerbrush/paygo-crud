@@ -24,9 +24,9 @@ schema_view = get_schema_view(
    openapi.Info(
       title="PayGo Users API",
       default_version='v1',
-      description="API Usuarios prueba PayGo",
+      description="API Usuarios: Desarrollado para prueba de PayGo",
       terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="contact@snippets.local"),
+      contact=openapi.Contact(email="OHenao@protonmail.ch"),
       license=openapi.License(name="BSD License"),
    ),
    public=True,
