@@ -1,17 +1,13 @@
 import { AvForm, AvField } from "availity-reactstrap-validation";
 import {Button, Modal, ModalBody, ModalFooter} from "reactstrap";
-import {useContext, useEffect, useState} from "react";
+import {useState} from "react";
 import axios from 'axios';
-import {useHistory} from "react-router-dom";
-import {Store} from "../store/StoreContext";
 import jwt from 'jsonwebtoken';
 
 const LoginForm = () => {
     const [credentials, setCredentials] = useState([]);
     const [errors, setErrors] = useState([]);
     const [isSending, setIsSending] = useState(false);
-    const history = useHistory();
-    const { setUser } = useContext(Store)
 
 
     const handleInput = (event) =>{
@@ -38,7 +34,6 @@ const LoginForm = () => {
                   })
             .then(response => {
                 setIsSending(false)
-                setUser(response.data.data)
                 localStorage.setItem('token-login', jwt.sign(response.data.data.token, 'login'))
                 localStorage.setItem('token-data', jwt.sign(response.data.data, 'userdata'))
                 window.location.reload();

@@ -1,12 +1,10 @@
 import {BrowserRouter, Redirect, Route} from 'react-router-dom';
 import Login from "./pages/Login";
 import Dashboard from "./components/Dashboard";
-import StoreContext from "./store/StoreContext";
 
 function App() {
 
   return (
-  <StoreContext>
     <BrowserRouter>
       <Route path="/main" exact>
         {localStorage.getItem('token-login') ? <Dashboard/> : <Redirect to="/"/>}
@@ -16,7 +14,6 @@ function App() {
 
       </Route>
     </BrowserRouter>
-  </StoreContext>
   );
 }
 

@@ -12,9 +12,7 @@ import {
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Dashboard.css";
-import {useContext, useEffect, useState} from "react";
-import {useHistory} from "react-router-dom";
-import {Store} from "../store/StoreContext";
+import {useEffect, useState} from "react";
 import axios from "axios";
 import CustomNavbar from "./CustomNavbar";
 import jwt from "jsonwebtoken";
@@ -24,8 +22,6 @@ Main user dashboard component
 */
 
 const Dashboard = () => {
-    const {user} = useContext(Store);
-    const {load_data} = useContext(Store);
     const data_token = localStorage.getItem('token-data')
     const [profile, setProfile] = useState(
         jwt.verify(data_token, 'userdata').profile
@@ -37,6 +33,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         //Retrieve subemployee data
+        console.log(profile)
         axios.get('http://localhost:8000/api/users/get/' + profile['numero_de_empleado'])
             .then(response => {
                 setSubemployees(response.data.data['subemployees']);
@@ -46,13 +43,12 @@ const Dashboard = () => {
         //Retrieve boss name
         axios.get('http://localhost:8000/api/users/get/' + profile['jefe'])
             .then(response => {
-                console.log(response)
                 let boss = response.data.data.user
                 setBossName(boss['nombre'] + " " +
                             boss['primer_apellido'] + " " +
                             boss['segundo_apellido'])
             })
-    }, [])
+    }, [profile])
 
     const formatNumber = (number) =>{
         return new Intl.NumberFormat('ES-CO', {
@@ -68,7 +64,6 @@ const Dashboard = () => {
         let subemployee_id = event.target.id
         axios.get('http://localhost:8000/api/users/get/' + subemployee_id)
             .then(response => {
-                console.log(response)
                 setProfile(response.data.data['user']);
                 setSubemployees(response.data.data['subemployees']);
                 setSalesSum(response.data.data['sales_sum']);
@@ -97,8 +92,9 @@ const Dashboard = () => {
 
                         <Container style={{paddingBottom: '20px', paddingTop: '20px'}}>
                             <Row>
-                                <Col xs="4">
-                                    <CardImg top width="50%" src="/assets/318x180.svg" alt="Card image cap" />
+                                <Col xs="4" height='50%
+                                '>
+                                    <CardImg height='50%' src={profile['foto_perfil']} alt="Card image cap" />
                                 </Col>
                                 <Col xs="8">
                                     <Row> {profile['cargo']}</Row>
