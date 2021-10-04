@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import jwt from "jsonwebtoken";
 
 /*  =============== StoreContext
 Component that uses Context React API.
@@ -12,8 +13,19 @@ export const Store = React.createContext();
 const StoreContext = (props) => {
     const [user, setUser] = useState([]);
 
+    const load_data = () => {
+        let data_token = localStorage.getItem('token-data')
+        let data;
+        if(data_token){
+            data = jwt.verify(data_token, 'userdata')
+            setUser(data)
+        }
+
+        return data;
+    }
+
     return (
-        <Store.Provider value={{ user, setUser }}>
+        <Store.Provider value={{ user, setUser, load_data}}>
             {props.children}
         </Store.Provider>
     );

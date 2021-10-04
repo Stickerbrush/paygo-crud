@@ -4,6 +4,7 @@ import {useContext, useEffect, useState} from "react";
 import axios from 'axios';
 import {useHistory} from "react-router-dom";
 import {Store} from "../store/StoreContext";
+import jwt from 'jsonwebtoken';
 
 const LoginForm = () => {
     const [credentials, setCredentials] = useState([]);
@@ -18,7 +19,6 @@ const LoginForm = () => {
             ...credentials,
             [event.target.name] :event.target.value
         })
-        console.log(credentials)
     }
 
     /* Used for cleaning the errors variable after
@@ -31,7 +31,7 @@ const LoginForm = () => {
     const sendCredentials = (event) => {
         event.preventDefault()
         setIsSending(true)
-        console.log('Sending data...' + credentials.email + credentials.password)
+        console.log('Sending data...' + credentials.email)
         axios.post('http://localhost:8000/api/oauth/login',
               {email : credentials.email,
                     password: credentials.password
@@ -39,12 +39,12 @@ const LoginForm = () => {
             .then(response => {
                 setIsSending(false)
                 setUser(response.data.data)
-                history.push('/main')
+                localStorage.setItem('token-login', jwt.sign(response.data.data.token, 'login'))
+                localStorage.setItem('token-data', jwt.sign(response.data.data, 'userdata'))
+                window.location.reload();
             })
             .catch(error => {
-                console.log("mgmdfigomid")
                 setErrors([error])
-                console.log(errors.length)
                 setIsSending(false)
             })
     }

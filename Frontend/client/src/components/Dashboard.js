@@ -3,12 +3,12 @@ import {
     Jumbotron,
     Card,
     CardBody,
-    Navbar,
-    Button,
-    NavItem,
-    NavLink,
-    Nav,
-    CardImg, CardTitle, CardSubtitle, CardText, ListGroupItem, ListGroup, Table
+    CardImg,
+    CardTitle,
+    CardText,
+    ListGroupItem,
+    ListGroup,
+    Table, Col, Row
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Dashboard.css";
@@ -16,6 +16,8 @@ import {useContext, useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 import {Store} from "../store/StoreContext";
 import axios from "axios";
+import CustomNavbar from "./CustomNavbar";
+import jwt from "jsonwebtoken";
 
 /*  =============== Dashboard
 Main user dashboard component
@@ -23,22 +25,20 @@ Main user dashboard component
 
 const Dashboard = () => {
     const {user} = useContext(Store);
-    let history = useHistory();
-    const profile = user.profile;
+    const {load_data} = useContext(Store);
+    const data_token = localStorage.getItem('token-data')
+    const [profile, setProfile] = useState(
+        jwt.verify(data_token, 'userdata').profile
+    )
     const [subEmployees, setSubemployees] = useState([])
     const [salesSum, setSalesSum] = useState(0)
     const [bossName, setBossName] = useState('N/A')
 
 
-    const handleLogout = () => {
-        history.push('/')
-    }
-
     useEffect(() => {
         //Retrieve subemployee data
         axios.get('http://localhost:8000/api/users/get/' + profile['numero_de_empleado'])
             .then(response => {
-                console.log(response.data.data)
                 setSubemployees(response.data.data['subemployees']);
                 setSalesSum(response.data.data['sales_sum']);
             })
@@ -54,26 +54,33 @@ const Dashboard = () => {
             })
     }, [])
 
-    useEffect(() => {
-       console.log("WOOOOW " )
-        console.log(user)
-    });
+    const formatNumber = (number) =>{
+        return new Intl.NumberFormat('ES-CO', {
+            style: 'currency',
+            currency: 'COP',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        }).format(number)
+    }
+
+    const checkSubemployee = (event) =>{
+        let boss_name = profile['nombre'] + " " + profile['primer_apellido'] + " " + profile['segundo_apellido'];
+        let subemployee_id = event.target.id
+        axios.get('http://localhost:8000/api/users/get/' + subemployee_id)
+            .then(response => {
+                console.log(response)
+                setProfile(response.data.data['user']);
+                setSubemployees(response.data.data['subemployees']);
+                setSalesSum(response.data.data['sales_sum']);
+            })
+
+        //Use same boss name as the main user
+        setBossName(boss_name)
+    }
 
     return(
         <>
-        <Navbar className="ml-auto"  light expand="md">
-            <Nav className="ml-auto" navbar >
-                <NavItem>
-                    <NavLink>
-                        <Button color="dark"
-                                onClick={handleLogout}
-                        >
-                            Log Out
-                        </Button>
-                    </NavLink>
-                </NavItem>
-            </Nav>
-        </Navbar>
+            <CustomNavbar/>
 
         <Container>
             <Jumbotron>
@@ -88,7 +95,30 @@ const Dashboard = () => {
                             </strong>
                         </CardTitle>
 
-                        <CardImg top width="50%" src="/assets/318x180.svg" alt="Card image cap" />
+                        <Container style={{paddingBottom: '20px', paddingTop: '20px'}}>
+                            <Row>
+                                <Col xs="4">
+                                    <CardImg top width="50%" src="/assets/318x180.svg" alt="Card image cap" />
+                                </Col>
+                                <Col xs="8">
+                                    <Row> {profile['cargo']}</Row>
+                                    <Row> {profile['area_operacional']}</Row>
+                                    <Row> {profile['ciudad'] + ", " + profile['departamento']}</Row>
+                                    <Row>
+                                        <Container
+                                                style ={{backgroundColor: 'green',
+                                                         marginLeft: '0px',
+                                                         width: '10em',
+                                                         display: 'inline-block'}}
+                                        >
+                                          <strong>{salesSum === 0 ? formatNumber(profile['ventas'])
+                                                            : formatNumber(salesSum)}</strong>
+                                        </Container>
+                                    </Row>
+
+                                </Col>
+                            </Row>
+                        </Container>
 
                         <CardText >
                             <ListGroup>
@@ -106,7 +136,7 @@ const Dashboard = () => {
                 </Card>
                 <hr />
 
-                {subEmployees.length!==0 && (<Container isOpen={false}>
+                {subEmployees.length!==0 && (<Container>
                     <h5> Subalternos</h5>
                     <Card style = {{backgroundColor: 'white'}}>
                         <Table>
@@ -117,18 +147,21 @@ const Dashboard = () => {
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                            </tr>
-                            <tr>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                            </tr>
-                            <tr>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                            </tr>
+                            {subEmployees.map(subemployee => (
+                                <tr key = {subemployee['numero_de_empleado']}>
+                                    <td id = {subemployee['numero_de_empleado']}
+                                        onClick={checkSubemployee} >
+                                        {subemployee['nombre'] + " " +
+                                         subemployee['primer_apellido'] + " " +
+                                         subemployee['segundo_apellido']}
+                                    </td>
+                                    <td>
+                                        {formatNumber(subemployee['ventas'])}
+                                    </td>
+
+                                </tr>
+
+                            ))}
                             </tbody>
                         </Table>
                     </Card>
