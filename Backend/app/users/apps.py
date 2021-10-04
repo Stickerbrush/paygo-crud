@@ -8,7 +8,6 @@ class UsersConfig(AppConfig):
     def ready(self):
         from .management.commands.seed import create_users, clear_data
         from users.models.users import CustomUser
-        clear_data()
         if len(CustomUser.objects.all()) == 0:
             print("No user data detected, seeding into the database...")
             create_users()
