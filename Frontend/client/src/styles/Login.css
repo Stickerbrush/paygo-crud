@@ -1,0 +1,50 @@
+
+body {
+    background-color: rgb(255, 254, 254);
+    font-family: sans-serif;
+    text-align: center;
+}
+
+#submit {
+    background-color: black;
+}
+
+.jumbotron {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-image: linear-gradient(135deg, rgb(187, 203, 187) 0%, rgb(251, 255, 250) 50%, rgb(187, 203, 187) 89%);
+
+    background-color: snow;
+    padding-bottom: 50px;
+    border-radius: 15px;
+}
+
+.card {
+    margin-left: 25px;
+    margin-right: 25px;
+
+    color: snow;
+    background-color: rgb(80, 95, 82);
+}
+
+.form-group{
+    padding-bottom: 20px;
+}
+
+hr {
+    margin-left:15% !important;
+    width: 70%;
+}
+
+h3 {
+    padding-top: 15px;
+}
+
+input{
+    text-align: center;
+
+}
+
+input:invalid{
+    border-color: greenyellow;
+}

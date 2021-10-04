@@ -1,0 +1,64 @@
+
+body {
+    background-color: rgb(33, 36, 34);
+    font-family: sans-serif;
+    text-align: center;
+}
+
+#submit {
+    background-color: rgb(10, 37, 10);
+}
+
+.list-group{
+    border-radius:10px;
+}
+
+.list-group-item{
+    border: none;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+
+}
+
+.navbar {
+    justify-content: end;
+    background-image: linear-gradient(135deg, rgb(187, 203, 187) 0%, rgb(251, 255, 250) 50%, rgb(187, 203, 187) 89%);
+}
+
+.navbar-light .navbar-nav .nav-link{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.button{
+    background-color: black;
+}
+
+.jumbotron {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: rgb(0, 59, 25);
+    background-color: snow;
+    padding-bottom: 50px;
+}
+.card {
+    margin-left: 25px;
+    margin-right: 25px;
+
+    color: snow;
+    background-color: rgb(80, 95, 82);
+}
+
+.form-group{
+    padding-bottom: 25px;
+}
+
+hr {
+    margin-left:15% !important;
+    width: 70%;
+}
+
+h3 {
+    padding-top: 15px;
+}

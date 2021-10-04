@@ -1,9 +1,5 @@
 from users.serializers.user_serializer import (CustomUser,
-                                               CustomUserSerializer,
-                                               make_password)
-
-
-
+                                               CustomUserSerializer)
 class UserController(object):
 
     def __init__(self) -> None:
@@ -28,10 +24,3 @@ class UserController(object):
             }
         else:
             return {}
-
-
-
-
-
-
-#ValidationError

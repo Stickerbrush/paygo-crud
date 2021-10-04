@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2592f143-fa72-434d-ab7e-2936adb415c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c7addf77-b896-4784-a5dd-958f4f522093.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c7addf77-b896-4784-a5dd-958f4f522093.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/controller/user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/controller/user_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/client/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +105,8 @@
       <updated>1633274393393</updated>
       <workItem from="1633274443150" duration="219000" />
       <workItem from="1633274746912" duration="29000" />
-      <workItem from="1633274819205" duration="24335000" />
+      <workItem from="1633274819205" duration="24961000" />
+      <workItem from="1633322262925" duration="1794000" />
     </task>
     <servers />
   </component>
@@ -118,28 +123,29 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="719" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1633278414676">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="719" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633278414676" />
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1633299594473">
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom" timestamp="1633353757249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633299594473" />
-    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1633299594473">
+    <state width="1877" height="186" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633353757249" />
+    <state width="1877" height="186" key="GridCell.Tab.0.center" timestamp="1633353757249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633299594473" />
-    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1633299594473">
+    <state width="1877" height="186" key="GridCell.Tab.0.center/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633353757249" />
+    <state width="1877" height="186" key="GridCell.Tab.0.left" timestamp="1633353757248">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633299594473" />
-    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1633299594473">
+    <state width="1877" height="186" key="GridCell.Tab.0.left/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633353757248" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right" timestamp="1633353757249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633299594473" />
+    <state width="1877" height="186" key="GridCell.Tab.0.right/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633353757249" />
     <state width="1877" height="362" key="GridCell.Tab.1.bottom" timestamp="1633295664837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -164,10 +170,10 @@
       <screen x="1920" y="177" width="1600" height="860" />
     </state>
     <state x="2032" y="217" width="1411" height="813" key="dock-window-2/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633293483853" />
-    <state x="2099" y="177" width="1109" height="813" key="dock-window-3" timestamp="1633295668912">
+    <state x="2099" y="177" width="1109" height="813" key="dock-window-3" timestamp="1633322574427">
       <screen x="1920" y="177" width="1600" height="860" />
     </state>
-    <state x="2099" y="177" width="1109" height="813" key="dock-window-3/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633295668912" />
+    <state x="2099" y="177" width="1109" height="813" key="dock-window-3/0.0.1920.1040/1920.177.1600.860@0.0.1920.1040" timestamp="1633322574427" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1633276105502">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -188,7 +194,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/users/controller/user_controller.py</url>
-          <line>12</line>
+          <line>8</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

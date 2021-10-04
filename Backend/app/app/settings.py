@@ -35,6 +35,9 @@ ALLOWED_HOSTS = [
     'paygotest.herokuapp.com',
 ]
 
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000'
+]
 
 # Application definition
 
@@ -50,6 +53,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_yasg',
     'rest_framework.authtoken',
+    'corsheaders',
 
     ####LOCAL APPS
     'users'
@@ -64,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'app.urls'
