@@ -63,6 +63,7 @@ For Django:
 - Django-Rest-Framework: To develop the API 
 - Pandas: For loading the csv file into the database
 - SQLite 3: The database engine of choice
+- Yasg: Yet another swagger generator, for documenting the API
 
 Special mention to Gunicorn and Whitenoise, two libraries needed to deploy a django API app to Heroku
 
