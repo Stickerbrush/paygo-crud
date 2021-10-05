@@ -21,13 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2592f143-fa72-434d-ab7e-2936adb415c0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/client/src/components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/client/src/components/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Frontend/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/controller/user_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/controller/user_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls/user_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls/user_urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/server/http_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/server/http_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/server/rest_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/server/rest_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +106,7 @@
       <workItem from="1633274443150" duration="219000" />
       <workItem from="1633274746912" duration="29000" />
       <workItem from="1633274819205" duration="24961000" />
-      <workItem from="1633322262925" duration="5956000" />
+      <workItem from="1633322262925" duration="8335000" />
     </task>
     <servers />
   </component>
@@ -196,7 +194,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/users/controller/user_controller.py</url>
-          <line>8</line>
+          <line>12</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

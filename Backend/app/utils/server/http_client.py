@@ -3,11 +3,12 @@ import requests
 import typing
 from urllib.parse import urlencode
 
+
+# HTTPClient class: used to consume external rest services
 class HttpClient(object):
-    """HTTPClient class: It class is used to consum external rest services"""
 
     def __init__(self, token: str, headers: dict = {}):
-        """Constructor for any API client"""
+        #Constructor for any API client
         self.__headers = self.mergeDict({
             'Content-Type': 'application/json',
             'Accept': 'application/json',
