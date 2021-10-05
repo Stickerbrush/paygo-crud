@@ -62,3 +62,16 @@ hr {
 h3 {
     padding-top: 15px;
 }
+
+.profile-pic{
+    display: block;
+    margin: auto;
+    max-width:230px;
+}
+
+.subemployee-td:hover{
+    text-decoration: underline;
+    cursor: pointer;
+    color: #3676EB;
+    transition: all .5s ease;
+}

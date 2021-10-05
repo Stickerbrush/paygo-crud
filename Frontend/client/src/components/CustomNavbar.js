@@ -2,6 +2,7 @@ import {Button, Nav, Navbar, NavItem, NavLink} from "reactstrap";
 import {useHistory} from "react-router-dom";
 import "../styles/NavBar.css";
 
+
 /*
 *  Top navbar component
 *

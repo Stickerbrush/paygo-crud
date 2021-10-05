@@ -3,8 +3,12 @@ import {Button, Modal, ModalBody, ModalFooter} from "reactstrap";
 import {useState} from "react";
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
+import {useHistory} from "react-router-dom";
+import {djangoApi} from "../api/api";
+
 
 const LoginForm = () => {
+    const history = useHistory();
     const [credentials, setCredentials] = useState([]);
     const [errors, setErrors] = useState([]);
     const [isSending, setIsSending] = useState(false);
@@ -28,7 +32,7 @@ const LoginForm = () => {
         event.preventDefault()
         setIsSending(true)
         console.log('Sending data...' + credentials.email)
-        axios.post('http://localhost:8000/api/oauth/login',
+        axios.post(djangoApi + 'api/oauth/login',
               {email : credentials.email,
                     password: credentials.password
                   })
@@ -46,7 +50,6 @@ const LoginForm = () => {
 
     return(
         <>
-
             <Modal isOpen = {errors.length === 0 ? false : true}
                    style = {{paddingTop: '7em'}}>
                 <ModalBody>

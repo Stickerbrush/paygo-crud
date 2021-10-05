@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2592f143-fa72-434d-ab7e-2936adb415c0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/users/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/management/seed_data/BDprueba.csv" beforeDir="false" afterPath="$PROJECT_DIR$/users/management/seed_data/BDprueba.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/client/src/components/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/client/src/components/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/client/src/components/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/client/src/components/LoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Frontend/client/src/styles/Dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../Frontend/client/src/styles/Dashboard.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +106,7 @@
       <workItem from="1633274443150" duration="219000" />
       <workItem from="1633274746912" duration="29000" />
       <workItem from="1633274819205" duration="24961000" />
-      <workItem from="1633322262925" duration="3107000" />
+      <workItem from="1633322262925" duration="3834000" />
     </task>
     <servers />
   </component>

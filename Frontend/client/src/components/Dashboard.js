@@ -16,6 +16,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import CustomNavbar from "./CustomNavbar";
 import jwt from "jsonwebtoken";
+import {djangoApi} from "../api/api";
 
 /*  =============== Dashboard
 Main user dashboard component
@@ -33,15 +34,14 @@ const Dashboard = () => {
 
     useEffect(() => {
         //Retrieve subemployee data
-        console.log(profile)
-        axios.get('http://localhost:8000/api/users/get/' + profile['numero_de_empleado'])
+        axios.get(djangoApi + 'api/users/get/' + profile['numero_de_empleado'])
             .then(response => {
                 setSubemployees(response.data.data['subemployees']);
                 setSalesSum(response.data.data['sales_sum']);
             })
 
         //Retrieve boss name
-        axios.get('http://localhost:8000/api/users/get/' + profile['jefe'])
+        axios.get(djangoApi + 'api/users/get/' + profile['jefe'])
             .then(response => {
                 let boss = response.data.data.user
                 setBossName(boss['nombre'] + " " +
@@ -62,7 +62,7 @@ const Dashboard = () => {
     const checkSubemployee = (event) =>{
         let boss_name = profile['nombre'] + " " + profile['primer_apellido'] + " " + profile['segundo_apellido'];
         let subemployee_id = event.target.id
-        axios.get('http://localhost:8000/api/users/get/' + subemployee_id)
+        axios.get(djangoApi +'api/users/get/' + subemployee_id)
             .then(response => {
                 setProfile(response.data.data['user']);
                 setSubemployees(response.data.data['subemployees']);
@@ -92,10 +92,10 @@ const Dashboard = () => {
 
                         <Container style={{paddingBottom: '20px', paddingTop: '20px'}}>
                             <Row>
-                                <Col xs="4" height='50%
-                                '>
-                                    <CardImg height='50%' src={profile['foto_perfil']} alt="Card image cap" />
+                                <Col xs="4" >
+                                    <CardImg className="profile-pic"src={profile['foto_perfil']} alt="Card image cap" />
                                 </Col>
+
                                 <Col xs="8">
                                     <Row> {profile['cargo']}</Row>
                                     <Row> {profile['area_operacional']}</Row>
@@ -145,7 +145,8 @@ const Dashboard = () => {
                             <tbody>
                             {subEmployees.map(subemployee => (
                                 <tr key = {subemployee['numero_de_empleado']}>
-                                    <td id = {subemployee['numero_de_empleado']}
+                                    <td className="subemployee-td"
+                                        id = {subemployee['numero_de_empleado']}
                                         onClick={checkSubemployee} >
                                         {subemployee['nombre'] + " " +
                                          subemployee['primer_apellido'] + " " +
