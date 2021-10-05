@@ -1,6 +1,8 @@
 import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom';
 import Login from "./pages/Login";
 import Dashboard from "./components/Dashboard";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 function App() {
 

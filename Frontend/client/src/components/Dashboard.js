@@ -10,7 +10,6 @@ import {
     ListGroup,
     Table, Col, Row
 } from "reactstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/Dashboard.css";
 import {useEffect, useState} from "react";
 import axios from "axios";

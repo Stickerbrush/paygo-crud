@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 
@@ -28,17 +28,16 @@ SECRET_KEY = 'django-insecure-k$rzf@4nqn=m88kb4&eiux-%&40y01=k1*^h0nx273av8w2hbz
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '0.0.0.0',
-    '127.0.0.1',
-    '[::1]',
-    '.localhost',
-    'paygotest.herokuapp.com',
+   '*'
 ]
 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000'
-]
+#STATIC FILE CONFIGURATION
+STATIC_URL = '/static/'# Static files (CSS, JavaScript, Images)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)# Extra places for collectstatic to find static files.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -54,6 +53,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'rest_framework.authtoken',
     'corsheaders',
+    'whitenoise',
 
     ####LOCAL APPS
     'users'
@@ -68,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'corsheaders.middleware.CorsMiddleware'
 ]
 

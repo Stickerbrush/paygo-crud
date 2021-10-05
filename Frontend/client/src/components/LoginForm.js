@@ -1,11 +1,11 @@
 import { AvForm, AvField } from "availity-reactstrap-validation";
-import {Button, Modal, ModalBody, ModalFooter} from "reactstrap";
+import {Button, Modal, ModalBody, ModalFooter, Spinner} from "reactstrap";
 import {useState} from "react";
 import axios from 'axios';
 import jwt from 'jsonwebtoken';
 import {useHistory} from "react-router-dom";
 import {djangoApi} from "../api/api";
-
+import "../styles/LoginForm.css";
 
 const LoginForm = () => {
     const history = useHistory();
@@ -60,6 +60,8 @@ const LoginForm = () => {
                 </ModalFooter>
             </Modal>
 
+            {isSending && (<Spinner style={{ width: '3rem', height: '3rem' }} />)}
+
             <AvForm
                 onSubmit={sendCredentials}
             >
@@ -98,10 +100,12 @@ const LoginForm = () => {
                         }
                     }}
                 />
+
                 <Button id="submit" color="dark" disabled={isSending}>
                     Login
                 </Button>
             </AvForm>
+
         </>
     );
 };
