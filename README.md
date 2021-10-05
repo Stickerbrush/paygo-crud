@@ -32,24 +32,38 @@ Then the Frotend folder, where the react project is located.
 
 For the react project the most important files and folders:
 
-`src/` folder that contains the main files of the project__
-`public/` react offers this folder to contain static files. If we look inside this folder, we have the index.html which is the main file and a set of files that are related to it.__
-`package.json`__
+`src/` folder that contains the main files of the project<br />
+`public/` react offers this folder to contain static files. If we look inside this folder, we have the index.html which is the main file and a set of files that are related to it.<br />
+`package.json`<br />
   
 Inside `src/` we can observe multiple files such as `index.js, App.js and index.css`. The first one is the most important one, it takes the `App.js` file that contains the whole application and renders it into the `index.html`. \
 On the other hand, `index.css`, implements global styles.
 
 And for the django project the most important files and folders:
 
-`app/` contains the main settings files and urls for the backend engine__
-`oauth/` contains all the logic related to the user authentication, as well as the endpoint for login__
-`staticfiles/` has all the static content that makes the API pages look nice (i.e swagger styles, and the default DRF styles) when deployed__
-`users/` contains all the business logic related to employees, as well as the endpoint for querying user data__
-`utils/` has several utility functions used for Http requests, handling error messages, etc.__
-
-
-
+`app/` contains the main settings files and urls for the backend engine<br />
+`oauth/` contains all the logic related to the user authentication, as well as the endpoint for login<br />
+`staticfiles/` has all the static content that makes the API pages look nice (i.e swagger styles, and the default DRF styles) when deployed<br />
+`users/` contains all the business logic related to employees, as well as the endpoint for querying user data<br />
+`utils/` has several utility functions used for Http requests, handling error messages, etc. <br />
  
  
  ## Most important libraries used
- 
+
+For React:
+
+- Reactstrap: For component styles <br />
+- Axios: For fetching data from the API endpoints <br />
+- jsonwebtoken: For login token management <br />
+
+For Django:
+- Django-Rest-Framework: To develop the API 
+- Pandas: For loading the csv file into the database
+- SQLite 3: The database engine of choice
+
+Special mention to Gunicorn and Whitenoise, two libraries needed to deploy a django API app to Heroku
+
+
+
+
+
