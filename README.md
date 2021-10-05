@@ -3,8 +3,9 @@
   
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-PayGo is a business application that offers basic read functionalities for employee data. It can be tested at https://paygotest.herokuapp.com/
-It runs on a Django API backend that can be tested at https://paygotestbackend.herokuapp.com/  
+PayGo is a business application that offers basic read functionalities for employee data. 
+
+It runs on a Django API backend that can be tested at https://paygotestbackend.herokuapp.com/ and a React Js client that can be tested at https://paygotest.herokuapp.com/
 
 ## Testing Locally
 
@@ -22,6 +23,8 @@ After installing dependencies, run the app in the development mode with:
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser. If changes are made to the app code, the page will reload.
   
+  
+Running the client locally should still work, as the fetch URLs are pointing towards the hosted django backend on Heroku
 
 ## About the Project
 
